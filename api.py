@@ -53,12 +53,13 @@ class PetFriends:
         """Метод отправляет на сервер данные о добавляемом питомце (с фото)
         и возвращает статус и результат запроса в формате JSON с добавленными данными"""
 
-        headers = {'auth_key': auth_key['key']}
         data = {
             'name': name,
             'animal_type': animal_type,
             'age': age,
         }
+
+        headers = {'auth_key': auth_key['key']}
 
         file = {'pet_photo': (pet_photo, open(pet_photo, 'rb'), 'image/jpg')}
 
